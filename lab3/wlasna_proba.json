@@ -1,0 +1,144 @@
+{
+  "change": {
+    "user": "Ania",
+    "title": "Parasite",
+    "from": 5,
+    "to": 2
+  },
+  "before": {
+    "mean": 3.368,
+    "neighbors": [
+      {
+        "user": "Celina",
+        "similarity": 0.511
+      },
+      {
+        "user": "Jacek",
+        "similarity": 0.433
+      },
+      {
+        "user": "Kasia",
+        "similarity": 0.204
+      }
+    ],
+    "all_similarities": {
+      "Bartek": 0.15,
+      "Celina": 0.511,
+      "Daria": -0.119,
+      "Ewa": 0.025,
+      "Filip": -0.182,
+      "Gosia": -0.249,
+      "Hubert": -0.081,
+      "Iga": -0.214,
+      "Jacek": 0.433,
+      "Kasia": 0.204,
+      "Leon": 0.062
+    },
+    "top5": [
+      {
+        "title": "Fight Club",
+        "predicted": 4.31,
+        "because": [
+          "Celina",
+          "Jacek",
+          "Kasia"
+        ]
+      },
+      {
+        "title": "Forrest Gump",
+        "predicted": 3.08,
+        "because": [
+          "Celina"
+        ]
+      },
+      {
+        "title": "Toy Story",
+        "predicted": 2.37,
+        "because": [
+          "Celina",
+          "Jacek",
+          "Kasia"
+        ]
+      },
+      {
+        "title": "The Shawshank Redemption",
+        "predicted": 2.24,
+        "because": [
+          "Kasia"
+        ]
+      },
+      {
+        "title": "Spirited Away",
+        "predicted": 2.13,
+        "because": [
+          "Celina",
+          "Jacek",
+          "Kasia"
+        ]
+      }
+    ]
+  },
+  "after": {
+    "mean": 3.211,
+    "neighbors": [
+      {
+        "user": "Celina",
+        "similarity": 0.542
+      },
+      {
+        "user": "Bartek",
+        "similarity": 0.377
+      },
+      {
+        "user": "Jacek",
+        "similarity": 0.305
+      }
+    ],
+    "all_similarities": {
+      "Bartek": 0.377,
+      "Celina": 0.542,
+      "Daria": -0.272,
+      "Ewa": -0.006,
+      "Filip": -0.253,
+      "Gosia": -0.309,
+      "Hubert": -0.096,
+      "Iga": -0.013,
+      "Jacek": 0.305,
+      "Kasia": 0.101,
+      "Leon": -0.042
+    },
+    "top5": [
+      {
+        "title": "Fight Club",
+        "predicted": 4.11,
+        "because": [
+          "Celina",
+          "Jacek"
+        ]
+      },
+      {
+        "title": "Forrest Gump",
+        "predicted": 2.92,
+        "because": [
+          "Celina"
+        ]
+      },
+      {
+        "title": "Toy Story",
+        "predicted": 2.39,
+        "because": [
+          "Celina",
+          "Jacek"
+        ]
+      },
+      {
+        "title": "Spirited Away",
+        "predicted": 2.11,
+        "because": [
+          "Celina",
+          "Jacek"
+        ]
+      }
+    ]
+  }
+}
