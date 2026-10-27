@@ -168,6 +168,14 @@ cd lab3
 ..\venv\Scripts\activate
 ```
 
+W PowerShellu polecenia wpisuj osobno, bez `&&` (PowerShell 5.1 go nie obsługuje). Aktywację można pominąć:
+
+```powershell
+cd lab3
+..\venv\Scripts\python.exe recommender.py
+..\venv\Scripts\python.exe app.py
+```
+
 | # | Punkt z listy | Co pokazać | Wynik |
 |---|---|---|---|
 | 1 | `python recommender.py` wypisuje rekomendacje dla Ani | `python recommender.py` | macierz (12, 24), 182 oceny, 63%; średnia Ani 3.37; sąsiedzi Celina 0.511, Jacek 0.433, Kasia 0.204; top-1 Fight Club 4.31 |
