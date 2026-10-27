@@ -1,0 +1,183 @@
+user,title,rating
+Ania,A Quiet Place,4
+Ania,Blade Runner 2049,5
+Ania,Die Hard,3
+Ania,Get Out,3
+Ania,Her,4
+Ania,Inception,4
+Ania,Interstellar,4
+Ania,John Wick,4
+Ania,La La Land,1
+Ania,Mad Max: Fury Road,3
+Ania,Parasite,5
+Ania,The Dark Knight,3
+Ania,The Lion King,2
+Ania,The Matrix,4
+Ania,The Notebook,2
+Ania,The Shining,3
+Ania,Titanic,3
+Ania,Up,3
+Ania,Whiplash,4
+Bartek,A Quiet Place,4
+Bartek,Blade Runner 2049,5
+Bartek,Die Hard,4
+Bartek,Her,5
+Bartek,Inception,4
+Bartek,Interstellar,5
+Bartek,John Wick,3
+Bartek,Parasite,3
+Bartek,The Dark Knight,3
+Bartek,The Matrix,5
+Bartek,Up,3
+Bartek,Whiplash,3
+Celina,A Quiet Place,4
+Celina,Blade Runner 2049,4
+Celina,Fight Club,4
+Celina,Forrest Gump,3
+Celina,Her,4
+Celina,Inception,4
+Celina,Interstellar,4
+Celina,John Wick,4
+Celina,La La Land,2
+Celina,Mad Max: Fury Road,3
+Celina,Spirited Away,2
+Celina,The Matrix,4
+Celina,Titanic,1
+Celina,Toy Story,3
+Daria,A Quiet Place,2
+Daria,Blade Runner 2049,2
+Daria,Die Hard,1
+Daria,Fight Club,5
+Daria,Forrest Gump,4
+Daria,Her,5
+Daria,John Wick,1
+Daria,La La Land,4
+Daria,Mad Max: Fury Road,1
+Daria,Parasite,4
+Daria,Spirited Away,2
+Daria,The Dark Knight,2
+Daria,The Lion King,2
+Daria,The Notebook,5
+Daria,The Shawshank Redemption,3
+Daria,Titanic,4
+Daria,Toy Story,3
+Daria,Whiplash,3
+Ewa,Blade Runner 2049,2
+Ewa,Die Hard,2
+Ewa,Fight Club,5
+Ewa,Get Out,2
+Ewa,Her,5
+Ewa,La La Land,4
+Ewa,Spirited Away,4
+Ewa,The Dark Knight,2
+Ewa,The Lion King,2
+Ewa,The Notebook,4
+Ewa,The Shawshank Redemption,5
+Ewa,The Shining,1
+Ewa,Titanic,4
+Ewa,Whiplash,4
+Filip,Blade Runner 2049,2
+Filip,Forrest Gump,5
+Filip,Her,4
+Filip,Inception,3
+Filip,La La Land,4
+Filip,Parasite,4
+Filip,The Lion King,3
+Filip,The Notebook,5
+Filip,The Shawshank Redemption,5
+Filip,The Shining,1
+Filip,Titanic,5
+Filip,Whiplash,4
+Gosia,Blade Runner 2049,2
+Gosia,Die Hard,2
+Gosia,Fight Club,4
+Gosia,Forrest Gump,4
+Gosia,Inception,3
+Gosia,Interstellar,2
+Gosia,John Wick,3
+Gosia,La La Land,4
+Gosia,Mad Max: Fury Road,2
+Gosia,Spirited Away,5
+Gosia,The Lion King,4
+Gosia,The Notebook,3
+Gosia,The Shawshank Redemption,4
+Gosia,The Shining,2
+Gosia,Titanic,3
+Gosia,Toy Story,5
+Gosia,Up,4
+Gosia,Whiplash,3
+Hubert,A Quiet Place,3
+Hubert,Blade Runner 2049,4
+Hubert,Her,3
+Hubert,Spirited Away,4
+Hubert,The Dark Knight,4
+Hubert,The Lion King,4
+Hubert,The Matrix,3
+Hubert,The Notebook,3
+Hubert,The Shining,3
+Hubert,Titanic,4
+Hubert,Toy Story,4
+Hubert,Up,5
+Iga,Die Hard,3
+Iga,Fight Club,4
+Iga,Forrest Gump,3
+Iga,Her,3
+Iga,Inception,4
+Iga,John Wick,2
+Iga,Parasite,2
+Iga,Spirited Away,5
+Iga,The Dark Knight,2
+Iga,The Lion King,4
+Iga,The Matrix,3
+Iga,The Shawshank Redemption,4
+Iga,The Shining,2
+Iga,Toy Story,4
+Iga,Up,5
+Iga,Whiplash,3
+Jacek,A Quiet Place,5
+Jacek,Die Hard,3
+Jacek,Fight Club,4
+Jacek,Get Out,5
+Jacek,Her,3
+Jacek,John Wick,4
+Jacek,La La Land,1
+Jacek,Mad Max: Fury Road,4
+Jacek,Parasite,4
+Jacek,Spirited Away,2
+Jacek,The Lion King,2
+Jacek,The Matrix,2
+Jacek,The Notebook,1
+Jacek,The Shining,4
+Jacek,Titanic,1
+Jacek,Toy Story,1
+Jacek,Up,1
+Kasia,A Quiet Place,4
+Kasia,Die Hard,3
+Kasia,Fight Club,4
+Kasia,Get Out,4
+Kasia,Her,3
+Kasia,John Wick,3
+Kasia,Parasite,4
+Kasia,Spirited Away,1
+Kasia,The Dark Knight,4
+Kasia,The Matrix,3
+Kasia,The Notebook,1
+Kasia,The Shawshank Redemption,2
+Kasia,The Shining,5
+Kasia,Toy Story,2
+Kasia,Whiplash,4
+Leon,A Quiet Place,5
+Leon,Blade Runner 2049,2
+Leon,Die Hard,4
+Leon,Forrest Gump,3
+Leon,Get Out,5
+Leon,Inception,3
+Leon,Interstellar,3
+Leon,La La Land,2
+Leon,Mad Max: Fury Road,4
+Leon,Parasite,4
+Leon,The Dark Knight,3
+Leon,The Matrix,3
+Leon,The Shining,5
+Leon,Up,2
+Leon,Whiplash,3

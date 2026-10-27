@@ -1,0 +1,8 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+# materiały z kursu: tylko do czytania, nie do oddania
+_kurs-referencja/
