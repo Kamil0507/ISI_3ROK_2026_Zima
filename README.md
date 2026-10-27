@@ -8,7 +8,6 @@ Repozytorium z rozwiązaniami labów 1–3 i materiałami na checkpoint CP-1 (mo
 | `lab2/` | content-based: `movies.csv` (24 filmy), `recommender.py` (TF-IDF + cosine), `app.py` (API) |
 | `lab3/` | collaborative filtering: `ratings.csv` (182 oceny), `recommender.py`, `app.py`, `wlasna_proba.py` |
 | `check_all.py` | sprawdza kontrakt API wszystkich labów (Flask `test_client`, bez serwera) |
-| `prezentacja/` | slajdy CP-1 (`CP1_rekomendacje.pptx`) i skrypt, który je buduje |
 
 ## Jak uruchomić (Windows CMD)
 
@@ -158,6 +157,38 @@ MAE = 0.607, pokrycie 3/3. Brakującej predykcji nie liczymy jako zera: obniża 
 3. **Zmieniają się podobieństwa i skład sąsiadów.** Jacek (odchylenie przy Parasite +1.24) i Kasia (+0.87) lubili Parasite bardziej niż zwykle. Wcześniej zgadzało się to z Anią, teraz jest przeciwnie, więc ich podobieństwo spada (0.433 → 0.305, 0.204 → 0.101). Bartek ocenił Parasite poniżej swojej średniej (−0.92), więc teraz zgadza się z Anią i jego podobieństwo rośnie z 0.150 do 0.377. Bartek wchodzi do trójki, a Kasia z niej wypada. Celina nie oceniła Parasite, ale jej podobieństwo i tak lekko rośnie (0.511 → 0.542), bo zmieniła się średnia Ani i norma jej wektora.
 4. **Zmieniają się rekomendacje.** Wszystkie przewidywania startują od niższej średniej Ani. *Fight Club* traci głos Kasi, a Bartek go nie ocenił, więc wynik spada z 4.31 do 4.11. *The Shawshank Redemption* oceniła tylko Kasia, więc po jej wypadnięciu nikt z sąsiadów nie ma oceny: Σ|sim| = 0 i film znika z listy. Ania nadal ma 5 nieocenionych filmów, ale model przewiduje tylko 4. *Toy Story* lekko rośnie (2.37 → 2.39), bo zniknął niski głos Kasi (2 przy średniej 3.13).
 
+## Demo na CP-1 (Definition of Done, lab 3)
+
+Pokaz na żywo, około 4 minut. Wszystkie wyniki poniżej pochodzą z uruchomionego kodu.
+
+**Przygotowanie (CMD):**
+
+```bat
+cd lab3
+..\venv\Scripts\activate
+```
+
+| # | Punkt z listy | Co pokazać | Wynik |
+|---|---|---|---|
+| 1 | `python recommender.py` wypisuje rekomendacje dla Ani | `python recommender.py` | macierz (12, 24), 182 oceny, 63%; średnia Ani 3.37; sąsiedzi Celina 0.511, Jacek 0.433, Kasia 0.204; top-1 Fight Club 4.31 |
+| 2 | `python app.py` startuje bez błędów | `python app.py` (zostaw włączone, dalej przeglądarka albo `curl` w drugim oknie) | `Running on http://127.0.0.1:5000` |
+| 3 | `/api/recommend?user=Ania` zwraca 200 i top-5 z `title`/`predicted`/`because` | http://127.0.0.1:5000/api/recommend?user=Ania | 200, `count: 5` (odpowiedź jak w przykładzie wyżej) |
+| 4 | nieznany user daje 404 z listą, brak parametru daje 400 | `/api/recommend?user=Zzz`, potem `/api/recommend` | 404 z `known_users` (12 imion); 400 `podaj parametr ?user=...` |
+| 5 | `/api/users` zwraca 12 nazwisk | http://127.0.0.1:5000/api/users | `count: 12` |
+| 6 | wyzwanie: `?k=` działa, porównanie k=1 i k=10 | `/api/recommend?user=Ania&k=1`, potem `&k=10`; dla kontrastu `&k=12` | k=1: 4 pozycje, Fight Club 4.08 (sama Celina); k=10: Fight Club 3.85, więcej osób w `because`; k=12 daje 400 |
+| 7 | umiem wyjaśnić centrowanie i różnicę cosine odchyleń vs Pearson | kod: `model_from_matrix()` w `recommender.py` | patrz niżej |
+| 8 | quiz min. 5/6 | na stronie labu | do zrobienia samodzielnie |
+
+Na koniec pokaż własną próbę: `python wlasna_proba.py` w `lab3` (wynik w sekcji wyżej). Dodatkowo można pokazać `/api/similar?user=Ania`, czyli 3 najbliższych sąsiadów.
+
+**Punkt 7 w trzech zdaniach:**
+
+- **Centrowanie:** odejmujemy od ocen średnią osoby, żeby porównywać odchylenia od jej własnej skali, a nie surowe gwiazdki. Surowe oceny są wszystkie dodatnie, więc dwie osoby, które „lubią wszystko”, wyglądałyby na podobne. Po centrowaniu brak oceny = 0 oznacza „brak odchylenia” i nic nie wnosi do iloczynu skalarnego.
+- **Cosine odchyleń a Pearson:** przy pełnych ocenach cosine wyśrodkowanych wektorów to dokładnie korelacja Pearsona. Przy brakach jest inaczej, z dwóch powodów. Po pierwsze średnią liczymy ze wszystkich ocen osoby, a nie tylko ze wspólnych filmów. Po drugie normy w mianowniku obejmują cały wektor, a nie tylko przecięcie. Dlatego mało wspólnych filmów to słaby dowód podobieństwa.
+- **Σ|sim| zamiast k:** nie każdy sąsiad ocenił film, więc dzielimy przez wagi osób, które naprawdę głosowały. Przykład: Forrest Gump ocenia tylko Celina, wynik to 3.08. Przy dzieleniu przez k=3 wyszłoby 3.32, czyli wynik byłby sztucznie ściągnięty do średniej Ani.
+
+Demo labów 1 i 2 (gdy prowadzący zapyta): `cd lab1` i `python app.py`, potem `/api/products/2`, `/api/products/99` (404) i `/api/products?max_price=abc` (400). W `lab2`: `/api/recommend?title=Inception&top_n=2` daje Blade Runner 2049 0.091 i The Dark Knight 0.063, a `?title=Incepton` daje 404 z `did_you_mean: ["Inception"]`.
+
 ## Narzędzia
 
-Python 3.13, Flask, pandas, scikit-learn i numpy (wersje w `requirements.txt`). Prezentację buduje `prezentacja/build_slides.py` (`pip install python-pptx`).
+Python 3.13, Flask, pandas, scikit-learn i numpy (wersje w `requirements.txt`).
